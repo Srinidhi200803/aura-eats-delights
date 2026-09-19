@@ -24,6 +24,11 @@ import { Input } from "@/components/ui/input";
 import { categories, products, type CartItem, type Category, type Product } from "@/data/products";
 
 const CART_KEY = "aura-eats-cart";
+const navItems = [
+  { label: "Home", id: "home" },
+  { label: "Menu", id: "menu" },
+  { label: "Offers", id: "offers" },
+] as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -106,8 +111,8 @@ function AuraEats() {
             <span className="truncate text-sm font-extrabold tracking-wide sm:text-base">AURA EATS</span>
           </button>
           <div className="hidden items-center gap-8 lg:flex">
-            {[["Home", "home"], ["Menu", "menu"], ["Offers", "offers"]].map(([label, id]) => (
-              <button key={id} onClick={() => scrollTo(id)} className="text-sm font-semibold text-muted-foreground transition hover:text-foreground focus-visible:outline-none focus-visible:text-primary">{label}</button>
+            {navItems.map((item) => (
+              <button key={item.id} onClick={() => scrollTo(item.id)} className="text-sm font-semibold text-muted-foreground transition hover:text-foreground focus-visible:outline-none focus-visible:text-primary">{item.label}</button>
             ))}
           </div>
           <div className="flex shrink-0 items-center justify-end gap-1.5">
