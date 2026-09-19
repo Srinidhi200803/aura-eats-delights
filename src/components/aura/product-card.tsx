@@ -19,8 +19,15 @@ export function ProductCard({ product, inCart, onAdd }: ProductCardProps) {
           width={1200}
           height={912}
           loading="lazy"
-          className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.04]"
-          style={{ objectPosition: product.imagePosition ?? "center" }}
+          className={`h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.04] ${
+            product.imagePosition === "left"
+              ? "object-left"
+              : product.imagePosition === "right"
+                ? "object-right"
+                : product.imagePosition === "top"
+                  ? "object-top"
+                  : "object-center"
+          }`}
         />
         <div className="absolute inset-x-0 top-0 flex items-start justify-between p-3">
           <span className="rounded-full border border-glass-border bg-glass px-2.5 py-1 text-xs font-semibold text-foreground backdrop-blur-md">
