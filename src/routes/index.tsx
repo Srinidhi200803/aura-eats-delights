@@ -104,15 +104,15 @@ function AuraEats() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
-      <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-6 sm:pt-4">
-        <nav className="mx-auto grid h-16 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-xl border border-glass-border bg-nav px-3 shadow-nav backdrop-blur-xl sm:px-5 lg:grid-cols-[1fr_auto_1fr]" aria-label="Main navigation">
+      <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-6 sm:pt-5">
+        <nav className="mx-auto grid h-[68px] max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-lg border border-glass-border bg-nav px-3 shadow-nav backdrop-blur-2xl sm:px-6 lg:grid-cols-[1fr_auto_1fr]" aria-label="Main navigation">
           <button className="flex min-w-0 items-center gap-2.5 text-left" onClick={() => scrollTo("home")} aria-label="AURA EATS home">
-            <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-primary text-primary-foreground shadow-button"><UtensilsCrossed className="size-4" /></span>
-            <span className="truncate text-sm font-extrabold tracking-wide sm:text-base">AURA EATS</span>
+            <span className="grid size-9 shrink-0 place-items-center rounded-md border border-primary/30 bg-primary/10 text-primary"><UtensilsCrossed className="size-4" /></span>
+            <span className="font-display truncate text-xl text-primary sm:text-2xl">AURA EATS</span>
           </button>
-          <div className="hidden items-center gap-8 lg:flex">
+          <div className="hidden items-center gap-10 lg:flex">
             {navItems.map((item) => (
-              <button key={item.id} onClick={() => scrollTo(item.id)} className="text-sm font-semibold text-muted-foreground transition hover:text-foreground focus-visible:outline-none focus-visible:text-primary">{item.label}</button>
+              <button key={item.id} onClick={() => scrollTo(item.id)} className="border-b border-transparent pb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:text-primary">{item.label}</button>
             ))}
           </div>
           <div className="flex shrink-0 items-center justify-end gap-1.5">
@@ -126,19 +126,19 @@ function AuraEats() {
       </header>
 
       <main>
-        <section id="home" className="relative min-h-[760px] scroll-mt-24 overflow-hidden border-b border-border sm:min-h-[820px]">
+        <section id="home" className="relative min-h-[720px] scroll-mt-24 overflow-hidden border-b border-border sm:min-h-[800px] lg:mx-auto lg:mt-6 lg:min-h-[780px] lg:max-w-[1480px] lg:rounded-b-xl lg:border-x">
           <img src={heroImage} alt="A curated AURA EATS table with pizza, burger, bowl and seasonal plates" width={1536} height={1152} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-center lg:object-right" />
           <div className="absolute inset-0 bg-hero-overlay" />
-          <div className="relative mx-auto flex min-h-[760px] max-w-7xl items-center px-5 pb-16 pt-28 sm:min-h-[820px] sm:px-8 lg:px-10">
-            <div className="max-w-3xl animate-hero-in">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-primary backdrop-blur-md"><Sparkles className="size-3.5" /> Curated. Crafted. Delivered.</div>
-              <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.03] sm:text-7xl lg:text-8xl">Crave the <span className="text-primary">extraordinary.</span></h1>
-              <p className="mt-6 max-w-xl text-base leading-7 text-soft sm:text-lg">Discover handcrafted flavors, curated favorites, and unforgettable bites delivered to your table.</p>
+          <div className="relative mx-auto flex min-h-[720px] max-w-7xl items-end px-5 pb-16 pt-32 sm:min-h-[800px] sm:px-8 sm:pb-24 lg:min-h-[780px] lg:items-center lg:px-12">
+            <div className="max-w-3xl animate-hero-in lg:-translate-y-2">
+              <div className="mb-7 inline-flex items-center gap-2 border-l border-primary bg-nav/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary backdrop-blur-md"><Sparkles className="size-3.5" /> Curated. Crafted. Delivered.</div>
+              <h1 className="max-w-3xl text-6xl leading-[0.9] sm:text-8xl lg:text-[7rem]">Crave the <span className="italic text-primary">extraordinary.</span></h1>
+              <p className="mt-7 max-w-lg text-sm leading-7 text-soft sm:text-base">Discover handcrafted flavors, curated favorites, and unforgettable bites delivered to your table.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" onClick={() => scrollTo("menu")}>Explore menu <ArrowDown /></Button>
                 <Button variant="glass" size="lg" onClick={() => scrollTo("offers")}>View offers <ArrowRight /></Button>
               </div>
-              <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-soft">
+              <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-glass-border pt-5 text-xs text-soft">
                 <span className="flex items-center gap-2"><Clock3 className="size-4 text-primary" /> 25–35 min delivery</span>
                 <span className="flex items-center gap-2"><Leaf className="size-4 text-veg" /> Freshly prepared</span>
                 <span className="flex items-center gap-2"><Sparkles className="size-4 text-coral" /> 4.8 average rating</span>
@@ -147,25 +147,25 @@ function AuraEats() {
           </div>
         </section>
 
-        <section id="offers" className="scroll-mt-24 px-4 py-12 sm:px-6 sm:py-16">
-          <div className="relative mx-auto min-h-[390px] max-w-7xl overflow-hidden rounded-2xl border border-border bg-card shadow-card sm:min-h-[430px]">
+        <section id="offers" className="scroll-mt-24 px-4 py-16 sm:px-6 sm:py-24">
+          <div className="relative mx-auto min-h-[420px] max-w-7xl overflow-hidden rounded-lg border border-glass-border bg-card shadow-card sm:min-h-[500px]">
             <img src={promoImage} alt="Chef-inspired pasta and comfort food selection" width={1408} height={912} loading="lazy" className="absolute inset-0 h-full w-full object-cover object-center" />
             <div className="absolute inset-0 bg-promo-overlay" />
-            <div className="relative flex min-h-[390px] max-w-2xl flex-col justify-center p-7 sm:min-h-[430px] sm:p-12 lg:p-16">
-              <span className="w-fit rounded-full bg-coral px-3 py-1 text-xs font-extrabold uppercase tracking-widest text-coral-foreground">Tonight&apos;s edit · 20% off</span>
-              <h2 className="mt-5 text-3xl font-extrabold sm:text-5xl">Your cravings, elevated.</h2>
+            <div className="relative flex min-h-[420px] max-w-2xl flex-col justify-end p-7 sm:min-h-[500px] sm:justify-center sm:p-12 lg:p-16">
+              <span className="w-fit rounded-sm border border-coral/40 bg-coral/15 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-coral">Tonight&apos;s edit · 20% off</span>
+              <h2 className="mt-6 text-5xl leading-[0.95] sm:text-7xl">Your cravings, <span className="italic text-primary">elevated.</span></h2>
               <p className="mt-4 max-w-lg leading-7 text-soft">Explore today&apos;s curated selection of comfort food and chef-inspired favorites.</p>
               <Button className="mt-7 w-fit" onClick={() => scrollTo("menu")}>Taste the edit <ChevronRight /></Button>
             </div>
           </div>
         </section>
 
-        <section id="menu" className="scroll-mt-20 px-4 pb-20 pt-8 sm:px-6 sm:pb-28 sm:pt-12">
+        <section id="menu" className="scroll-mt-20 border-t border-border px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24">
           <div className="mx-auto max-w-7xl">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div className="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-xs font-extrabold uppercase tracking-widest text-primary">The menu</p>
-                <h2 className="mt-2 text-3xl font-extrabold sm:text-5xl">Made for the moment.</h2>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-primary">The menu · Collection 01</p>
+                <h2 className="mt-3 text-5xl leading-none sm:text-7xl">Made for the <span className="italic text-primary">moment.</span></h2>
                 <p className="mt-3 text-sm text-muted-foreground sm:text-base">Bold flavors. Beautifully made. Yours in minutes.</p>
               </div>
               <Button variant="outline" onClick={() => setSearchOpen((value) => !value)}><Search /> Search dishes</Button>
@@ -181,7 +181,7 @@ function AuraEats() {
               </div>
             </div>
 
-            <div className="scrollbar-none -mx-4 mt-8 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0" role="tablist" aria-label="Food categories">
+            <div className="scrollbar-none -mx-4 mt-10 flex gap-2 overflow-x-auto border-b border-border px-4 pb-5 sm:mx-0 sm:px-0" role="tablist" aria-label="Food categories">
               {categories.map((item) => (
                 <Button key={item} role="tab" aria-selected={category === item} variant={category === item ? "default" : "glass"} className="shrink-0" onClick={() => setCategory(item)}>
                   {item === "All" && <Flame />}{item}
@@ -189,13 +189,13 @@ function AuraEats() {
               ))}
             </div>
 
-            <div className="mt-5 flex items-center justify-between gap-4 border-t border-border pt-5">
+             <div className="mt-5 flex items-center justify-between gap-4">
               <p className="text-sm text-muted-foreground"><span className="font-bold text-foreground">{visibleProducts.length}</span> dishes found</p>
               {(search || category !== "All") && <Button variant="ghost" size="sm" onClick={() => { setSearch(""); setCategory("All"); }}>Clear filters</Button>}
             </div>
 
             {visibleProducts.length > 0 ? (
-              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-7">
                 {visibleProducts.map((product) => <ProductCard key={product.id} product={product} inCart={cart.some((item) => item.id === product.id)} onAdd={addToCart} />)}
               </div>
             ) : (
