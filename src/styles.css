@@ -19,7 +19,8 @@
  */
 
 @theme inline {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -80,25 +81,25 @@
 
 :root {
   color-scheme: dark;
-  --radius: 0.75rem;
-  --background: oklch(0.145 0.008 285);
-  --foreground: oklch(0.96 0.02 82);
-  --card: oklch(0.19 0.009 285);
+  --radius: 0.625rem;
+  --background: oklch(0.145 0.008 45);
+  --foreground: oklch(0.965 0.018 82);
+  --card: oklch(0.185 0.012 48);
   --card-foreground: oklch(0.96 0.02 82);
   --popover: oklch(0.19 0.009 285);
   --popover-foreground: oklch(0.96 0.02 82);
-  --primary: oklch(0.78 0.15 72);
-  --primary-foreground: oklch(0.16 0.018 62);
-  --secondary: oklch(0.24 0.012 285);
+  --primary: oklch(0.79 0.16 72);
+  --primary-foreground: oklch(0.145 0.015 55);
+  --secondary: oklch(0.235 0.014 48);
   --secondary-foreground: oklch(0.94 0.015 82);
-  --muted: oklch(0.23 0.009 285);
-  --muted-foreground: oklch(0.7 0.018 78);
-  --accent: oklch(0.26 0.018 65);
+  --muted: oklch(0.225 0.012 48);
+  --muted-foreground: oklch(0.71 0.022 78);
+  --accent: oklch(0.255 0.024 58);
   --accent-foreground: oklch(0.96 0.02 82);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.34 0.012 70 / 55%);
-  --input: oklch(0.4 0.014 70 / 65%);
+  --border: oklch(0.48 0.04 70 / 34%);
+  --input: oklch(0.52 0.05 70 / 48%);
   --ring: oklch(0.78 0.15 72);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -114,20 +115,20 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.78 0.15 72);
   --soft: oklch(0.82 0.02 82);
-  --glass: oklch(0.18 0.008 285 / 76%);
-  --glass-border: oklch(0.74 0.045 72 / 18%);
-  --nav: oklch(0.13 0.008 285 / 82%);
-  --drawer: oklch(0.16 0.009 285 / 96%);
-  --overlay: oklch(0.07 0.006 285 / 76%);
-  --coral: oklch(0.68 0.16 35);
+  --glass: oklch(0.18 0.012 48 / 72%);
+  --glass-border: oklch(0.78 0.09 72 / 18%);
+  --nav: oklch(0.125 0.01 48 / 80%);
+  --drawer: oklch(0.155 0.012 48 / 97%);
+  --overlay: oklch(0.07 0.008 48 / 80%);
+  --coral: oklch(0.67 0.19 35);
   --coral-foreground: oklch(0.98 0.008 80);
   --veg: oklch(0.72 0.16 145);
-  --hero-overlay: linear-gradient(90deg, oklch(0.1 0.008 285 / 98%) 0%, oklch(0.1 0.008 285 / 87%) 39%, oklch(0.1 0.008 285 / 34%) 72%, oklch(0.1 0.008 285 / 12%) 100%);
-  --promo-overlay: linear-gradient(90deg, oklch(0.11 0.008 285 / 96%) 0%, oklch(0.11 0.008 285 / 88%) 42%, oklch(0.11 0.008 285 / 18%) 82%);
-  --shadow-card: 0 18px 50px oklch(0.05 0.01 285 / 28%);
-  --shadow-card-hover: 0 24px 65px oklch(0.05 0.01 285 / 48%);
-  --shadow-nav: 0 14px 45px oklch(0.05 0.01 285 / 32%);
-  --shadow-button: 0 10px 25px oklch(0.65 0.15 72 / 18%);
+  --hero-overlay: linear-gradient(90deg, oklch(0.105 0.012 48 / 98%) 0%, oklch(0.105 0.012 48 / 82%) 38%, oklch(0.105 0.012 48 / 28%) 70%, oklch(0.105 0.012 48 / 8%) 100%);
+  --promo-overlay: linear-gradient(90deg, oklch(0.105 0.012 48 / 97%) 0%, oklch(0.105 0.012 48 / 84%) 42%, oklch(0.105 0.012 48 / 14%) 82%);
+  --shadow-card: 0 18px 55px oklch(0.04 0.01 48 / 35%), inset 0 1px 0 oklch(0.9 0.06 75 / 3%);
+  --shadow-card-hover: 0 28px 75px oklch(0.04 0.01 48 / 58%), 0 0 0 1px oklch(0.79 0.16 72 / 9%);
+  --shadow-nav: 0 18px 55px oklch(0.04 0.01 48 / 42%);
+  --shadow-button: 0 10px 30px oklch(0.68 0.16 72 / 22%);
 }
 
 .dark {
@@ -178,6 +179,11 @@
     text-rendering: optimizeLegibility;
   }
 
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+
   html { scroll-behavior: smooth; }
 
   button, a, input { outline-offset: 3px; }
@@ -195,8 +201,8 @@
 
 @media (max-width: 767px) {
   :root {
-    --hero-overlay: linear-gradient(180deg, oklch(0.1 0.008 285 / 50%) 0%, oklch(0.1 0.008 285 / 48%) 30%, oklch(0.1 0.008 285 / 96%) 78%, oklch(0.1 0.008 285) 100%);
-    --promo-overlay: linear-gradient(90deg, oklch(0.11 0.008 285 / 94%) 0%, oklch(0.11 0.008 285 / 78%) 72%, oklch(0.11 0.008 285 / 52%) 100%);
+    --hero-overlay: linear-gradient(180deg, oklch(0.105 0.012 48 / 42%) 0%, oklch(0.105 0.012 48 / 46%) 30%, oklch(0.105 0.012 48 / 96%) 78%, oklch(0.105 0.012 48) 100%);
+    --promo-overlay: linear-gradient(90deg, oklch(0.105 0.012 48 / 95%) 0%, oklch(0.105 0.012 48 / 79%) 72%, oklch(0.105 0.012 48 / 52%) 100%);
   }
 }
 

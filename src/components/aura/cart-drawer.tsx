@@ -34,10 +34,10 @@ export function CartDrawer({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="flex w-[calc(100%-1rem)] flex-col border-glass-border bg-drawer p-0 backdrop-blur-xl sm:max-w-md">
-        <SheetHeader className="border-b border-border px-5 py-5 text-left sm:px-6">
-          <SheetTitle className="flex items-center gap-3 text-xl">
-            <span className="grid size-9 place-items-center rounded-full bg-primary text-primary-foreground">
+      <SheetContent className="flex w-[calc(100%-1rem)] flex-col border-glass-border bg-drawer p-0 shadow-card-hover backdrop-blur-2xl sm:max-w-md">
+        <SheetHeader className="border-b border-border px-5 py-6 text-left sm:px-7">
+          <SheetTitle className="flex items-center gap-3 text-3xl font-normal">
+            <span className="grid size-10 place-items-center rounded-full border border-primary/35 bg-primary/10 text-primary">
               <ShoppingBag className="size-4" />
             </span>
             Your order
@@ -49,10 +49,10 @@ export function CartDrawer({
 
         {items.length === 0 ? (
           <div className="flex flex-1 flex-col items-center justify-center px-8 text-center">
-            <div className="grid size-24 place-items-center rounded-full border border-dashed border-primary/40 bg-primary/10">
+             <div className="grid size-24 place-items-center rounded-full border border-primary/30 bg-primary/10 shadow-button">
               <ShoppingBag className="size-10 text-primary" aria-hidden="true" />
             </div>
-            <h3 className="mt-6 text-xl font-bold text-foreground">
+             <h3 className="mt-6 text-2xl text-foreground">
               Your cart is waiting for something delicious.
             </h3>
             <p className="mt-2 text-sm leading-6 text-muted-foreground">
@@ -64,18 +64,18 @@ export function CartDrawer({
           <>
             <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4 sm:px-6">
               {items.map((item) => (
-                <article key={item.id} className="grid grid-cols-[72px_minmax(0,1fr)] gap-3 rounded-lg border border-border bg-card p-3">
+                 <article key={item.id} className="grid grid-cols-[76px_minmax(0,1fr)] gap-4 rounded-lg border border-border bg-card/75 p-3 shadow-card">
                   <img
                     src={item.image}
                     alt=""
                     width={1200}
                     height={912}
-                    className="size-[72px] rounded-md object-cover"
+                    className="size-[76px] rounded-md object-cover"
                   />
                   <div className="min-w-0">
                     <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2">
                       <div className="min-w-0">
-                        <h3 className="truncate text-sm font-bold text-foreground">{item.name}</h3>
+                         <h3 className="truncate text-lg leading-tight text-foreground">{item.name}</h3>
                         <p className="mt-1 text-sm font-semibold text-primary">₹{item.price}</p>
                       </div>
                       <Button variant="ghost" size="icon-sm" onClick={() => onRemove(item.id)} aria-label={`Remove ${item.name}`}>

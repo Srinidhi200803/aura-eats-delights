@@ -11,15 +11,15 @@ type ProductCardProps = {
 
 export function ProductCard({ product, inCart, onAdd }: ProductCardProps) {
   return (
-    <article className="group flex min-h-[440px] flex-col overflow-hidden rounded-xl border border-border bg-card shadow-card transition duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-card-hover">
-      <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+    <article className="group flex min-h-[490px] flex-col overflow-hidden rounded-lg border border-border bg-card/80 shadow-card backdrop-blur-sm transition duration-500 hover:-translate-y-1.5 hover:border-primary/35 hover:shadow-card-hover">
+      <div className="relative aspect-[4/3.35] overflow-hidden bg-muted">
         <img
           src={product.image}
           alt={product.name}
           width={1200}
           height={912}
           loading="lazy"
-          className={`h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.04] ${
+          className={`h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.055] ${
             product.imagePosition === "left"
               ? "object-left"
               : product.imagePosition === "right"
@@ -29,18 +29,18 @@ export function ProductCard({ product, inCart, onAdd }: ProductCardProps) {
                   : "object-center"
           }`}
         />
-        <div className="absolute inset-x-0 top-0 flex items-start justify-between p-3">
-          <span className="rounded-full border border-glass-border bg-glass px-2.5 py-1 text-xs font-semibold text-foreground backdrop-blur-md">
+        <div className="absolute inset-x-0 top-0 flex items-start justify-between p-4">
+          <span className="rounded-sm border border-glass-border bg-nav px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-primary backdrop-blur-md">
             {product.category}
           </span>
-          <span className="flex items-center gap-1 rounded-full border border-glass-border bg-glass px-2.5 py-1 text-xs font-semibold text-foreground backdrop-blur-md">
+          <span className="flex items-center gap-1 rounded-sm border border-glass-border bg-nav px-2.5 py-1 text-[10px] font-semibold text-foreground backdrop-blur-md">
             <Star className="size-3 fill-primary text-primary" aria-hidden="true" />
             {product.rating}
           </span>
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex min-w-0 items-start gap-2">
           <span
             className="mt-1.5 grid size-4 shrink-0 place-items-center border border-veg text-veg"
@@ -49,16 +49,16 @@ export function ProductCard({ product, inCart, onAdd }: ProductCardProps) {
             <span className={`size-1.5 rounded-full ${product.vegetarian ? "bg-veg" : "bg-coral"}`} />
           </span>
           <div className="min-w-0">
-            <h3 className="text-lg font-bold leading-tight text-foreground">{product.name}</h3>
-            <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted-foreground">
+             <h3 className="text-2xl leading-[1.05] text-foreground transition-colors group-hover:text-primary">{product.name}</h3>
+             <p className="mt-3 line-clamp-2 text-sm leading-6 text-muted-foreground">
               {product.description}
             </p>
           </div>
         </div>
 
-        <div className="mt-auto flex items-end justify-between gap-3 pt-5">
-          <p className="text-xl font-extrabold text-foreground">
-            <span className="mr-0.5 text-sm font-semibold text-primary">₹</span>
+        <div className="mt-auto flex items-end justify-between gap-3 border-t border-border/70 pt-5">
+          <p className="text-xl font-semibold text-primary">
+            <span className="mr-0.5 text-sm font-medium">₹</span>
             {product.price}
           </p>
           <Button
