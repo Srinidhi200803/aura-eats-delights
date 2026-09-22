@@ -213,7 +213,7 @@ function AuraEats() {
       <footer className="border-t border-border px-5 py-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p className="font-bold text-foreground">AURA EATS <span className="font-normal text-muted-foreground">· Crave the extraordinary.</span></p>
-          <p>Curated with care. Delivered with warmth.</p>
+          <p>Made by <span className="font-semibold text-primary">Srinidhi</span></p>
         </div>
       </footer>
 
