@@ -217,7 +217,7 @@ function AuraEats() {
         </div>
       </footer>
 
-      <CartDrawer items={cart} open={cartOpen} onOpenChange={setCartOpen} onUpdate={updateQuantity} onRemove={(id) => setCart((current) => current.filter((item) => item.id !== id))} onExplore={exploreFromCart} onCheckout={() => { setCartOpen(false); toast.success("Demo order confirmed", { description: "No payment was taken. Your favorites are still in the cart." }); }} />
+      <CartDrawer items={cart} open={cartOpen} onOpenChange={setCartOpen} onUpdate={updateQuantity} onRemove={(id) => setCart((current) => current.filter((item) => item.id !== id))} onExplore={exploreFromCart} onCheckout={() => { setCartOpen(false); toast.success("Demo checkout complete", { description: "No payment was taken. Your cart is saved for later." }); }} />
     </div>
   );
 }
