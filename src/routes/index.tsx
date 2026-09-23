@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import {
   ArrowDown,
@@ -11,6 +11,7 @@ import {
   ShoppingBag,
   Sparkles,
   UtensilsCrossed,
+  UserRound,
   X,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -116,6 +117,15 @@ function AuraEats() {
             ))}
           </div>
           <div className="flex shrink-0 items-center justify-end gap-1.5">
+            <Button asChild variant="ghost" size="icon" className="sm:hidden">
+              <Link to="/login" aria-label="Sign in"><UserRound /></Link>
+            </Button>
+            <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
+              <Link to="/login">Sign in</Link>
+            </Button>
+            <Button asChild variant="glass" size="sm" className="hidden md:inline-flex">
+              <Link to="/signup">Create account</Link>
+            </Button>
             <Button variant="ghost" size="icon" onClick={() => { setSearchOpen(true); window.setTimeout(() => document.getElementById("food-search")?.focus(), 200); }} aria-label="Search menu"><Search /></Button>
             <Button variant="glass" size="icon" className="relative" onClick={() => setCartOpen(true)} aria-label={`Open cart with ${itemCount} items`}>
               <ShoppingBag />
