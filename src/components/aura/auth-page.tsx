@@ -189,7 +189,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
   );
 }
 
-function Field({ label, id, error, children }: { label: string; id: string; error?: string; children: React.ReactNode }) {
+function Field({ label, id, error, children }: { label: string; id: string; error: string | undefined; children: React.ReactNode }) {
   return (
     <div className="space-y-1.5">
       <label htmlFor={id} className="block text-xs font-medium text-soft">{label}</label>
