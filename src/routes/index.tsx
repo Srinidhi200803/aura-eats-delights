@@ -12,6 +12,7 @@ import {
   Sparkles,
   UtensilsCrossed,
   UserRound,
+  UserRoundPlus,
   X,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -117,13 +118,16 @@ function AuraEats() {
             ))}
           </div>
           <div className="flex shrink-0 items-center justify-end gap-1.5">
-            <Button asChild variant="ghost" size="icon" className="sm:hidden">
+            <Button asChild variant="ghost" size="icon-sm" className="sm:hidden">
               <Link to="/login" aria-label="Sign in"><UserRound /></Link>
+            </Button>
+            <Button asChild variant="ghost" size="icon-sm" className="sm:hidden">
+              <Link to="/signup" aria-label="Create account"><UserRoundPlus /></Link>
             </Button>
             <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
               <Link to="/login">Sign in</Link>
             </Button>
-            <Button asChild variant="glass" size="sm" className="hidden md:inline-flex">
+            <Button asChild variant="glass" size="sm" className="hidden sm:inline-flex">
               <Link to="/signup">Create account</Link>
             </Button>
             <Button variant="ghost" size="icon" onClick={() => { setSearchOpen(true); window.setTimeout(() => document.getElementById("food-search")?.focus(), 200); }} aria-label="Search menu"><Search /></Button>
